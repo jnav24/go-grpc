@@ -1,12 +1,14 @@
 package main
 
 import (
+	common "github.com/jnav24/go-grpc-common"
+	_ "github.com/joho/godotenv/autoload"
 	"log"
 	"net/http"
 )
 
-const (
-	httpAddr = ":8080"
+var (
+	httpAddr = common.EnvString("HTTP_ADDR", ":3000")
 )
 
 func main() {
